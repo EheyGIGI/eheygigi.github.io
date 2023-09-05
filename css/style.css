@@ -289,3 +289,50 @@ button:focus{
     opacity: 1;
     top: 0;
 }
+.projects{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:1rem;
+}
+.project{
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden; /*이미지가 삐져나오지 않게 */
+}
+.project__img{
+    width: 100%;
+}
+.project__metadata{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    /* 부모(position: relative;)의 100% */
+    background-color: var(--color-black);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    /* display:flex 수평 속성을 나열함 */
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms ease-in;
+    transform: translateY(-10px);
+}
+.project__metadata:hover{
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+.project__title:after{
+    /* 문서상(HTML)의 요소가 아니며 스타일용인 경우 가상의 요소 사용 */
+    content: '';
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0.5rem 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+}
