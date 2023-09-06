@@ -196,7 +196,7 @@ button:focus{
 #skills{
     background-color: var(--color-primary-variant);
     color: var(--color-text);
-}    
+}
 .skills{
     display: grid;
     grid-template-columns: 6fr 4fr;
@@ -271,7 +271,7 @@ button:focus{
 }
 .category__count{
     opacity: 0;
-    position: absolute; 
+    position: absolute;
     top: -20px;
     right: 7px;
     width: 28px;
@@ -284,7 +284,7 @@ button:focus{
 }
 .category--selected .category__count,
 .category:hover .category__count{
-    /* 해당 카테고리가 선택됐을때 카운트이거나 
+    /* 해당 카테고리가 선택됐을때 카운트이거나
     마우스가 올라갔을 때 그 안의 카운트를 지정  */
     opacity: 1;
     top: 0;
@@ -308,7 +308,7 @@ button:focus{
     position: absolute;
     top:0;
     right: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     /* 부모(position: relative;)의 100% */
     background-color: var(--color-black);
@@ -326,7 +326,7 @@ button:focus{
     transform: translateY(0px);
 }
 .project__title:after{
-    /* 문서상(HTML)의 요소가 아니며 
+    /* 문서상(HTML)의 요소가 아니며
     스타일용인 경우 가상의 요소 사용
     border-bottom로도 사용가능하다 */
     content: '';
@@ -368,4 +368,37 @@ button:focus{
     color: var(--color-accent);
     font-weight: bold;
     filter: brightness(70%);
+}
+
+/* Arrowup */
+.arrow-up{
+    background-color: var(--color-primary);
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    font-size: 3rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    text-align: center;
+    border-radius: 100%;
+    box-shadow: 5px 5px 0px 0px var(--color-accent);
+}
+
+/* Footer */
+#contact{
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+.contact__links{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.contact__link{
+    transition: all 250ms ease-in;
+}
+.contact__link:hover{
+    color: var(--color-accent);
 }
