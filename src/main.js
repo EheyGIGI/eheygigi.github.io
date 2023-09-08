@@ -1,4 +1,4 @@
-
+'use strict';
 
 // Adopting Dark styling when header scrolling down
 const header = document.querySelector('.header');
@@ -19,7 +19,7 @@ document.addEventListener('scroll', ()=> {
 });
 
 //visibling arrow icon when it's far away from home section
-const arrowUp = document.querySelectors('.arrow-up');
+const arrowUp = document.querySelector('.arrow-up');
 document.addEventListener('scroll', ()=>{
     if(window.scrollY > homeHeight / 2){
         arrowUp.style.opacity = 1;
