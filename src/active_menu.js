@@ -1,8 +1,6 @@
-const sectionIds = ['#home', '#about', '#skills', '#about', '#testimonial', 'contact'];
+const sectionIds = ['#home', '#about', '#skills', '#about', '#testimonial', '#contact'];
 const sections = sectionIds.map((id) => document.querySelector(id));
-const navItems = sectionIds.map((id) => 
-    document.querySelector(`[href="${id}"]`)
-);
+const navItems = sectionIds.map((id) => document.querySelector(`[href="${id}"]`));
 
 const visibleSections = sectionIds.map(()=> false); //기본적으로 비워줌
 
