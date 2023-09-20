@@ -3,6 +3,8 @@ const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) => document.querySelector(`[href="${id}"]`));
 
 const visibleSections = sectionIds.map(()=> false);
+let activeNavItem = navItems[0];
+
 const options = {
     rootMargin: '-20% 0px 0px 0px',
     threshold : [0,0.98],
@@ -18,15 +20,23 @@ function observerCallback(entries){
         selectLastOne = 
             index === sectionIds.length - 1 && 
             entry.isIntersecting && 
-            entry.intersectionRatio >= 0.99;
+            entry.intersectionRatio >= 0.95;
     });
-    console.log(visibleSections);
-    console.log('무조건 라스트 섹션!', selectLastOne);
     
     const navIndex = selectLastOne 
         ? sectionIds.length - 1 
         : findFirstIntersection(visibleSections);
-    console.log(sectionIds[navIndex]);
+    // console.log(sectionIds[navIndex]);
+
+    selectNavItem(navIndex);
+}
+
+function selectNavItem(index){
+    const navItem = navItems[index];
+    if(!navItem) return;
+    activeNavItem.classList.remove('active');
+    activeNavItem = navItem;
+    activeNavItem.classList.add('active');
 }
 
 function findFirstIntersection(intersections){
